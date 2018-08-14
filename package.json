@@ -2,9 +2,6 @@
   "name": "webpack-vue-multiple-pages",
   "version": "1.0.0",
   "description": "Vue project multiple page configuration with Webpack4.",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Gaius",
   "license": "MIT",
   "scripts": {
