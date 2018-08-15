@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development",
-    "serve": "npm run dev:test &",
+    "ci": "npm run lint && npm run build && npm run serve && npm run test && notify",
     "lint": "eslint --fix . --ext .vue,.jsx,.js && stylelint --fix src/**/*.less -s less",
     "tar": "tar czf dist.tgz dist && rm -rf dist",
     "build": " npm run build:clean && cross-env NODE_ENV=production webpack -p --mode production && npm run tar",
@@ -34,6 +34,7 @@
     "html-webpack-plugin": "^3.2.0",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
+    "macaca-datahub": "^2.1.9",
     "mini-css-extract-plugin": "^0.4.1",
     "postcss-loader": "^3.0.0",
     "style-loader": "^0.22.1",
@@ -43,11 +44,13 @@
     "vue": "^2.5.17",
     "vue-loader": "^15.3.0",
     "vue-router": "^3.0.1",
+    "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.5.17",
     "vuex": "^3.0.1",
     "webpack": "^4.16.5",
     "webpack-bundle-analyzer": "^2.13.1",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.5"
+    "webpack-dev-server": "^3.1.5",
+    "whatwg-fetch": "^2.0.4"
   }
 }

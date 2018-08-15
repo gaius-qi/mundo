@@ -8,6 +8,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const DataHub = require('macaca-datahub')
+const datahub = new DataHub()
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production'
@@ -47,7 +49,7 @@ module.exports = (env, argv) => {
 
     resolve: {
       alias: {
-        vue: 'vue/dist/vue.js',
+        vue$: 'vue/dist/vue.esm.js',
       },
       extensions: [
         '.js', '.vue', '.json', '.less',
@@ -133,32 +135,34 @@ module.exports = (env, argv) => {
       contentBase: './',
       stats: 'errors-only',
       open: process.env.NODE_ENV !== 'test',
+      after: () => {
+        datahub.startServer({
+          port: 5678,
+          store: path.join(__dirname, 'data'),
+          view: {
+            assetsUrl: 'https://unpkg.alipay.com/datahub-view@2',
+          },
+        })
+      },
     },
 
     optimization: {
       splitChunks: {
         chunks: 'all',
         cacheGroups: {
+          vuePackage: {
+            name: 'vue-package',
+            test: /[\\/]node_modules\/.*vue/,
+            priority: 2,
+          },
           vendor: {
             name: 'vendors',
             test: /[\\/]node_modules[\\/]/,
-            enforce: true,
-            minChunks: 1,
-            priority: 2,
-          },
-          vuePackage: {
-            name: 'vue-package',
-            test: /vue/,
-            minChunks: 2,
-            priority: 3,
-            enforce: true,
+            priority: 1,
           },
           default: {
             name: 'commons',
-            test: /[\\/]src[\\/]/,
             minChunks: 2,
-            priority: 1,
-            enforce: true,
           },
         },
       },
