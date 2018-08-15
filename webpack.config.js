@@ -139,9 +139,6 @@ module.exports = (env, argv) => {
         datahub.startServer({
           port: 5678,
           store: path.join(__dirname, 'data'),
-          view: {
-            assetsUrl: 'https://unpkg.alipay.com/datahub-view@2',
-          },
         })
       },
     },
