@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-const Home = () => import(/* webpackChunkName: "group-sword-home" */ '../../views/sword/Home.vue')
+const Home = () => import(/* webpackChunkName: "group-sword-home" */ '../../view/sword/Home.vue')
 
 Vue.use(Router)
 

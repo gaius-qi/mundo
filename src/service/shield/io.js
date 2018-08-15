@@ -1,10 +1,16 @@
-const basicUrl = ''
+import request from '../../utils/request.js'
+
+let baseUrl = 'server'
+
+if (process.env.NODE_ENV === 'development') {
+  baseUrl = 'http://localhost:5678/data/webpack-vue-multiple-pages/'
+}
 
 export default {
-  getTest () {
+  async init () {
     /* istanbul ignore next */
-    return fetch('./static/testA.json')
-      .then(response => response.json())
-      .catch(error => console.log(error))
+    return request(`${baseUrl}api/init.json`, 'POST', {
+      foo: 'bar',
+    })
   },
 }
