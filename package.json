@@ -1,7 +1,7 @@
 {
-  "name": "webpack-vue-multiple-pages",
+  "name": "mundo",
   "version": "1.0.0",
-  "description": "Vue project multiple page configuration with Webpack4.",
+  "description": "Build vue single page application quickly based on webpack4",
   "author": "Gaius",
   "license": "MIT",
   "bin": {
@@ -64,7 +64,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:gaius-qi/webpack-vue-multiple-pages.git"
+    "url": "git@github.com:gaius-qi/mundo.git"
   },
   "engines": {
     "node": "8",
