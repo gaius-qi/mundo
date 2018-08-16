@@ -3,16 +3,14 @@ Build vue single page application quickly based on webpack4.
 
 ## Usage
 
-### Init new project
-
-Use npm package
+### Use mundo init new project
 
 ```bash
 $ npm i mundo -g
 $ mundo [dir]
 ```
 
-Or use git clone
+### Use git clone
 
 ```bash
 $ git clone git@github.com:gaius-qi/mundo.git
@@ -27,3 +25,7 @@ $ npm run dev
 
 $ npm run build
 ``` mundo
+
+## License
+
+The MIT License (MIT)
