@@ -94,9 +94,14 @@ module.exports = (env, argv) => {
           loader: 'url-loader',
           options: {
             limit: 4000,
-            name: isProduction ? '[name].[hash:7].[ext]' : '[name][hash].[ext]',
-            publicPath: isProduction ? '../static' : '',
-            outputPath: isProduction ? 'static' : '',
+            fallback: {
+              loader: 'file-loader',
+              options: {
+                name: isProduction ? '[name].[hash:7].[ext]' : '[name][hash].[ext]',
+                publicPath: isProduction ? '../static' : '',
+                outputPath: isProduction ? 'static' : '',
+              },
+            },
           },
         },
       ],
