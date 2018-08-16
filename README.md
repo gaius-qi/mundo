@@ -1,5 +1,5 @@
 # mundo
-Build vue single page application quickly based on webpack4.
+Build vue single page application quickly based on webpack4.0
 
 ## Usage
 
