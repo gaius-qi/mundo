@@ -4,10 +4,17 @@ import router from '../../router/shield'
 import store from '../../store/shield'
 import '../../style/common/normalize.less'
 import '../../style/shield/index.less'
+import {
+  setupLang,
+  i18n,
+} from '../../utils/i18n'
 
-new Vue({
-  el: '#app',
-  store,
-  router,
-  ...App,
+setupLang('shield').then(() => {
+  new Vue({
+    el: '#app',
+    i18n,
+    store,
+    router,
+    render: h => h(App),
+  })
 })
