@@ -28,4 +28,4 @@ $ npm run build
 
 ## License
 
-The MIT License (MIT)
+[MIT](http://opensource.org/licenses/MIT)
