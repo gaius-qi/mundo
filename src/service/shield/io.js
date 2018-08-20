@@ -3,7 +3,7 @@ import request from '../../utils/request.js'
 let baseUrl = 'server'
 
 if (process.env.NODE_ENV === 'development') {
-  baseUrl = 'http://localhost:5678/data/webpack-vue-multiple-pages/'
+  baseUrl = 'http://localhost:5678/data/moundo/'
 }
 
 export default {

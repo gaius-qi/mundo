@@ -1,0 +1,11 @@
+{
+  "protocol": "http",
+  "pathname": "api/init.json",
+  "method": "ALL",
+  "projectUniqId": "fd2c44a2-19cc-4bc6-992a-b59f6647bb88",
+  "description": "init",
+  "currentScene": "default",
+  "proxyConfig": {},
+  "contextConfig": {},
+  "uniqId": "ca2d76be-f6ad-4a3e-bb75-9591ce96e57d"
+}
