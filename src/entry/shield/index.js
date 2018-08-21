@@ -2,8 +2,8 @@ import Vue from 'vue'
 import App from '../../view/index.vue'
 import router from '../../router/shield'
 import store from '../../store/shield'
-import '../../style/common/normalize.less'
-import '../../style/shield/index.less'
+import '../../style/common/normalize'
+import '../../style/shield'
 import {
   setupLang,
   i18n,
