@@ -24,7 +24,7 @@ export default async (url, method = 'GET', params = {}) => {
   if (!res.ok) {
     return {
       success: false,
-      message: 'Network Error',
+      message: 'Fetch Error',
     }
   }
 
@@ -37,7 +37,7 @@ export default async (url, method = 'GET', params = {}) => {
   } catch (e) {
     return {
       success: false,
-      message: 'Network Error',
+      message: 'Fetch Error',
     }
   }
 }
